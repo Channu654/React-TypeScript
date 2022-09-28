@@ -11,12 +11,23 @@ function App() {
   const addnotes = (note: noteType) => {
     setNotes([note, ...notes]);
   };
+
+  const handleDelete = (id: any) => {
+    const newList = notes.filter((item) => item.id != id);
+
+    setNotes(newList);
+  };
   return (
     <div className='App'>
       <h1>NoteApp</h1>
       <Addnote addnotes={addnotes} />
       {notes.map((note) => (
-        <Note priority={note.priority} text={note.text} key={note.id} />
+        <Note
+          priority={note.priority}
+          text={note.text}
+          key={note.id}
+          // handleDelete={handleDelete}
+        />
       ))}
     </div>
   );

@@ -1,11 +1,13 @@
-export type NotePropes = {
+export type Priority = 'high' | 'low' | 'medium';
 
-  text: string,
-  priority?: 'high' | 'medium' | 'low',
+export type NotePropes = {
+  text: string;
+  priority?: Priority;
 };
 
 export type noteType = {
-  id: number;
+  id: string;
   text: string;
-  priority?: 'high' | 'medium' | 'low';
+  priority: Priority;
 };
+
